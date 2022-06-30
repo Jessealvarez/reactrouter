@@ -1,10 +1,14 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+//components
+import BlogPost from "./components/BlogPost";
+import AllBlogs from "./components/AllBlogs";
+//pages
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
-import { Route, Routes } from "react-router-dom";
-import BlogPost from "./components/BlogPost";
+import SubmitBlog from "./pages/SubmitBlog";
+//utilities
 import { blogPosts } from "./utils/sampleBlogs";
-import AllBlogs from "./components/AllBlogs";
 
 function App() {
   return (
@@ -13,11 +17,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />}>
-            <Route path="all" element={<AllBlogs blogPosts={blogPosts} />} />
+            <Route index element={<AllBlogs blogPosts={blogPosts} />} />
             <Route
               path=":blogId"
               element={<BlogPost blogPosts={blogPosts} />}
             />
+            <Route path="submit-blog" element={<SubmitBlog />} />
           </Route>
         </Routes>
       </header>

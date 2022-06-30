@@ -1,4 +1,5 @@
 import React from "react";
+//useSearchParams lets this take input from the URL searchbar
 import { useSearchParams } from "react-router-dom";
 
 //passed {blogPosts} into <Allblogs /> as =PROPS= so it can be accessed here
